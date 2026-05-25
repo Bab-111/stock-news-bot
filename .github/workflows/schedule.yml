@@ -3,7 +3,7 @@ name: Stock News Report
 on:
   schedule:
     - cron: '0 8 * * *'
-    - cron: '0 13.30 * * *'
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
