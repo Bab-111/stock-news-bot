@@ -5,28 +5,36 @@ from pathlib import Path
 
 STOCKS = Path("stocks.txt").read_text().strip().splitlines()
 
-GENERAL_NEWS_FEEDS = [
-    ("Reuters Markets",    "https://feeds.reuters.com/reuters/businessNews"),
-    ("MarketWatch",        "https://feeds.content.dowjones.io/public/rss/mw_realtimeheadlines"),
-    ("CNBC",               "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114"),
-    ("Google Finance News","https://news.google.com/rss/search?q=stock+market+finance&hl=en-US&gl=US&ceid=US:en"),
-]
-
 def get_general_news():
+    """Get news specifically about the stocks we are tracking"""
     all_news = []
-    for source_name, url in GENERAL_NEWS_FEEDS:
+    # Search Google News for each stock by name
+    for ticker in STOCKS:
         try:
+            url = f"https://news.google.com/rss/search?q={ticker}+stock&hl=en-US&gl=US&ceid=US:en"
             feed = feedparser.parse(url)
             for e in feed.entries[:3]:
                 all_news.append({
-                    "source": source_name,
+                    "source": f"Google News · {ticker}",
                     "title": e.title,
                     "link": e.link,
                     "published": e.get("published", "")[:16]
                 })
         except:
             pass
-    return all_news[:12]  # Show top 12 general news items
+    # Also add general market news from Reuters
+    try:
+        feed = feedparser.parse("https://feeds.reuters.com/reuters/businessNews")
+        for e in feed.entries[:4]:
+            all_news.append({
+                "source": "Reuters Markets",
+                "title": e.title,
+                "link": e.link,
+                "published": e.get("published", "")[:16]
+            })
+    except:
+        pass
+    return all_news
 
 def get_yahoo_news(ticker):
     url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=US&lang=en-US"
