@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stock News Report</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
     h1 { color: #1a1a2e; }
-    small { color: #666; font-size: 0.85em; }
+    h2 { color: #1a1a2e; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-top: 40px; }
+    small { color: #999; font-size: 0.8em; margin-left: 8px; }
     .card { background: white; border-radius: 10px; padding: 20px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
     .card-header { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
     .ticker { font-size: 1.4em; font-weight: 700; color: #1a1a2e; }
@@ -16,15 +17,64 @@
     .change { font-weight: 600; }
     .meta { color: #888; font-size: 0.85em; margin-bottom: 10px; }
     .news-list { padding-left: 18px; }
-    .news-list li { margin: 6px 0; }
+    .news-list li { margin: 8px 0; }
     .news-list a { color: #0066cc; text-decoration: none; }
     .news-list a:hover { text-decoration: underline; }
+    .general-news { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .general-news ul { padding-left: 0; list-style: none; }
+    .general-news li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+    .general-news a { color: #0066cc; text-decoration: none; font-weight: 500; }
+    .general-news a:hover { text-decoration: underline; }
+    .news-source { display: inline-block; background: #1a1a2e; color: white; font-size: 0.7em; padding: 2px 7px; border-radius: 4px; margin-right: 8px; vertical-align: middle; }
     footer { text-align: center; color: #aaa; margin-top: 40px; font-size: 0.85em; }
   </style>
 </head>
 <body>
   <h1>📈 Stock News Report</h1>
-  <p><small>Generated: 2026-05-25 02:47 UTC | Stocks: 5</small></p>
+  <p style="color:#666">Generated: 2026-05-25 03:29 UTC &nbsp;|&nbsp; Stocks tracked: 5</p>
+
+  <h2>🌍 General Market News</h2>
+  <div class="general-news">
+    <ul><li>
+              <span class="news-source">MarketWatch</span>
+              <a href="https://www.marketwatch.com/story/elon-musk-in-a-post-on-x-says-some-of-his-trump-posts-went-too-far-and-that-he-regrets-them-90e73a6a?mod=mw_rss_realtimeheadlines" target="_blank">Elon Musk in a post on X says some of his Trump posts ‘went too far’ and that he regrets them</a>
+              <small>Wed, 11 Jun 2025</small>
+            </li><li>
+              <span class="news-source">MarketWatch</span>
+              <a href="https://www.marketwatch.com/story/bank-of-england-decision-on-thursday-will-be-at-12-02-p-m-local-time-instead-of-12-p-m-due-to-ve-day-two-minutes-of-silence-1f6bed66?mod=mw_rss_realtimeheadlines" target="_blank">Bank of England decision on Thursday will be at 12:02 p.m. local time instead of 12 p.m., due to VE Day’s two minutes of silence</a>
+              <small>Tue, 06 May 2025</small>
+            </li><li>
+              <span class="news-source">MarketWatch</span>
+              <a href="https://www.marketwatch.com/story/swiss-national-bank-cuts-interest-rates-by-a-half-point-to-0-5-ed1fce78?mod=mw_rss_realtimeheadlines" target="_blank">Swiss National Bank cuts interest rates by a half point to 0.5%</a>
+              <small>Thu, 12 Dec 2024</small>
+            </li><li>
+              <span class="news-source">CNBC</span>
+              <a href="https://www.cnbc.com/2026/05/24/oil-price-iran-war-strait-hormuz-trump-peace-talks.html" target="_blank">Oil prices fall 5% after Trump says Iran talks proceeding in a 'constructive manner'</a>
+              <small>Sun, 24 May 2026</small>
+            </li><li>
+              <span class="news-source">CNBC</span>
+              <a href="https://www.cnbc.com/2026/05/25/asia-markets-today-live-updates-asx-nikkei-sensei-iran-us-trump-oil-hormuz.html" target="_blank">Japan’s Nikkei 225 tops 65,000 for first time as oil falls on Hormuz reopening hopes</a>
+              <small>Mon, 25 May 2026</small>
+            </li><li>
+              <span class="news-source">CNBC</span>
+              <a href="https://www.cnbc.com/2026/05/24/the-mandalorian-and-grogu-is-disneys-lowest-star-wars-film-opening.html" target="_blank">'The Mandalorian and Grogu' is Disney's lowest-ever Star Wars film opening</a>
+              <small>Sun, 24 May 2026</small>
+            </li><li>
+              <span class="news-source">Google Finance News</span>
+              <a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOTBnYVJLT0R2cTR2MU1aamZEODVJSWpGeVNVNkNheG1lbVptdFRrdGhRb1FMUGxUUDM4eWZaRFRibkhCRzAyMk9YVm4za3NnM2w2T3ViUHVVTXhJWTktdmVGOUVGdkx3MjZESTlWQXU4dnBxbEpTd2tOTEZPNUhjQzZkeHd3clJqdW5OZF91MzBuYjNWTHk0dmNpaXdPUkI4SmNKOGQ0RF9PVGJnYWVYR0JMSVl6ZFVVQndNV0h6SVc4ZDA?oc=5" target="_blank">Stocks and earnings surge, and Iran deal may be imminent: What to watch this week - Yahoo Finance</a>
+              <small>Sun, 24 May 2026</small>
+            </li><li>
+              <span class="news-source">Google Finance News</span>
+              <a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxNcmJLZEctTFh6UF9FWVEtTVNmQkJHT0JsanpGZFlNYWxKZDNxbGYxZTdoZTAwRHJPbUNUM01oeWFYc3hIdWlMTUw0eFgzRDJIdjRVV3p4MlJDa3dYd2ZTcXVteTA4bk8ydkQ0NE9KQXduOERxWklEN045anN6YWQ2MXVXMDJWbWZqQjhodno3NmVxUmlpTWNNUU1VTXQ1TnA3b25vRmV3dVJ0cmxOQi04Q3prMENBcDNlbTZHQ3d0T3N4SHdZbFY4OFlSUkJJQQ?oc=5" target="_blank">Why bonds may not save investors from the next market shock: Chart of the Day - Yahoo Finance</a>
+              <small>Sat, 23 May 2026</small>
+            </li><li>
+              <span class="news-source">Google Finance News</span>
+              <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQZnhkSHFxb3I2eGhaNGFYaTY3YXB0dnZDanYzWUZ6aDRxRDNxY25TalE5Q2tQRHpuS3B6QTd1S1FObXIwNGg1THNKYkNZeHVMeF9HMVRtODJDNGpzcjRzVEhfUDJjTFI4ODZxUFIxNWFsTkNveW5sZTRkOXphQ1ZuOFhfSHNYSEpYRS0zLURGbllvWjlPTTQxUF9fT0J2RnJmZTMw?oc=5" target="_blank">'There's mania': Strategists weigh in on looming SpaceX IPO - Yahoo Finance</a>
+              <small>Sun, 24 May 2026</small>
+            </li></ul>
+  </div>
+
+  <h2>📊 Your Stocks</h2>
   
         <div class="card">
           <div class="card-header">
@@ -76,6 +126,7 @@
           <div class="meta">Sector: Communication Services</div>
           <ul class="news-list"><li><a href="https://finance.yahoo.com/markets/stocks/articles/bank-america-reiterates-buy-rating-133045160.html?.tsrc=rss" target="_blank">Bank of America Reiterates Buy Rating on Netflix (NFLX) Stock</a> <small>Sun, 24 May 2026</small></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/netflix-inc-nflx-one-best-115513974.html?.tsrc=rss" target="_blank">Is Netflix, Inc. (NFLX) One of the Best Communication Stocks to Invest In?</a> <small>Sat, 23 May 2026</small></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/netflix-live-push-merchandising-raise-011735994.html?.tsrc=rss" target="_blank">Netflix Live Push And Merchandising Raise Fresh Questions For Valuation</a> <small>Sat, 23 May 2026</small></li><li><a href="https://finance.yahoo.com/markets/stocks/articles/imax-potential-suitors-netflix-apple-200204119.html?.tsrc=rss" target="_blank">IMAX Potential Suitors Include Netflix, Apple, Wedbush Says</a> <small>Fri, 22 May 2026</small></li><li><a href="https://finance.yahoo.com/m/8f5a2948-cfc8-3d6a-911b-b31603b73e17/imax-might-be-exploring-a.html?.tsrc=rss" target="_blank">IMAX Might Be Exploring a Sale. Who Could Be Buying.</a> <small>Fri, 22 May 2026</small></li></ul>
         </div>
-  <footer>Auto-generated by GitHub Actions · Source: Yahoo Finance</footer>
+
+  <footer>Auto-generated by GitHub Actions · Sources: Yahoo Finance, Reuters, MarketWatch, CNBC, Google News</footer>
 </body>
 </html>
