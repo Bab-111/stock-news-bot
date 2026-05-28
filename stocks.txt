@@ -3,3 +3,4 @@ GOOG
 MCD
 SCO
 NFLX
+NOW
