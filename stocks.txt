@@ -4,3 +4,4 @@ MCD
 SCO
 NFLX
 NOW
+LULU 
