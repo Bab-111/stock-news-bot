@@ -1,5 +1,5 @@
 SoFi
-GCOM
+QCOM
 GOOG
 MCD
 SCO
