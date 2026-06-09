@@ -1,4 +1,5 @@
 SoFi
+GCOM
 GOOG
 MCD
 SCO
