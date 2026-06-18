@@ -1,4 +1,5 @@
 SoFi
+RKLB
 QCOM
 GOOG
 MCD
